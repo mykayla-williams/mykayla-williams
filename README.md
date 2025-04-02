@@ -106,4 +106,4 @@ shuffle(availableCells.begin(), availableCells.end(), gen);
 int** generateBoard(const int& empty_boxes);
 
 #endif // GENERATOR_H
-//lol 
+
