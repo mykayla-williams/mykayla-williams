@@ -1,4 +1,4 @@
-//lol
+//
 //
 
 #ifndef GENERATOR_H
