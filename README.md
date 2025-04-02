@@ -1,5 +1,4 @@
-//
-// Created by Mykayla Williams on 4/1/25.
+
 //
 
 #ifndef GENERATOR_H
