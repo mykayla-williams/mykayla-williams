@@ -130,7 +130,7 @@ tuple<int, int, int> findNextCell(int** BOARD) {
         }
         }
         if(validOptions<minOptions){
-        ,inOptions=validOptions;
+        minOptions=validOptions;
         bestRow=r;
         bestcol=c;
         
