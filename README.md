@@ -185,6 +185,8 @@ void createAndSaveNPuzzles(const int& num_puzzles, const int& complexity_empty_b
         }else{
             cout << "!! Failed to write(" << filename << ") "<< total_success << "of " << num_puzzles << endl;
         }
+        deallocateBoard(BOARD); // Free memory allocated for the board
+        BOARD = nullptr;
     }
     cout << total_success << " files written out of " << num_puzzles <<endl;
 }
@@ -242,7 +244,14 @@ void solveAndSaveNPuzzles(const int &num_puzzles, const string& source, const st
                 cout << "Puzzle Solved Written(over total): " << total_success_write << "/" << num_puzzles << endl;
             }
         }
+        deallocateBoard(sudoku;
+        sudoku=nullptr;
     }
+    int total_success_solve = 0;
+    int total_success_write = 0;
+    vector<string> path_to_sudokus = getAllSudokuInFolder(source);
+
+    
 }
 
 
