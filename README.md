@@ -122,6 +122,21 @@ tuple<int, int, int> findNextCell(int** BOARD) {
 
     for (int r = 0; r < 9; r++) {
         for (int c = 0; c < 9; c++) {
+        if(BOARD[r][c]==0){
+        int validOptions=0;
+        for(int k=1; k<=9;k++){
+        if(isValid(BOARD,r, c, k)){
+        validOptions++;
+        }
+        }
+        if(validOptions<minOptions){
+        ,inOptions=validOptions;
+        bestRow=r;
+        bestcol=c;
+        
+        }
+        
+        }
             // TODO: Complete the logic inside this nested loop
             /**
              * - Check if BOARD[r][c] is empty (value == 0).
@@ -132,12 +147,28 @@ tuple<int, int, int> findNextCell(int** BOARD) {
              */
         }
     }
+    if(minOptions==1){
     return {bestRow, bestCol, minOptions};
+}
 }
 
 
+
 bool solveBoardEfficient(int** BOARD)
-{
+{ auto[int row, col, options]=findNextCell(BOARD);
+if(row==-1){
+return true;
+}
+for (int k=1; k<=9; k++){
+if(isValid(BOARD,r, c, k){
+BOARD[row[col]=k;
+if(solveBoardEfficient(BOARD)){
+return true;
+}
+BOARD[row][col]=0;
+}
+}
+return false;
     /**
      * @brief Efficiently solves the Sudoku board using backtracking and the MRV heuristic.
      *
@@ -167,6 +198,12 @@ bool solve(int** board, const bool& efficient) {
      * - If efficient == true, return solveBoardEfficient(board).
      * - Else, return solveBoard(board, 0, 0).
      */
-
+    if(efficient){
+    return solveBoardEfficient(board);
+    
     return solveBoard(board, 0, 0); // Temporary: Always calls basic solver
+    }
+
 }
+
+
